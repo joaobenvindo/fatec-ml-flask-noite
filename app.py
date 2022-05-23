@@ -17,6 +17,3 @@ def predicao():
     return str(predicao[0])
 
 app.run(debug=True)
-
-
-# print(model.predict(['ruim']))
