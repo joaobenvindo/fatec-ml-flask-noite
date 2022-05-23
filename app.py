@@ -10,10 +10,10 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/predicao', methods=["POST"])    
+@app.route('/predicao', methods=['POST'])
 def predicao():
-    nome = request.form['firstname']
-    predicao = model.predict(['firstname'])
-    return str(predicao[0])
+  PD = request.form['Partidas Disputadas']
+  predicao = model.predict([PD])
+  return render_template('resposta.html', predicao=predicao[0])
 
 app.run(debug=True)
